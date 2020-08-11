@@ -1,0 +1,48 @@
+/* Global Stylings */
+
+.t-0 {
+  top: 0 !important;
+}
+
+.b-0 {
+  bottom: 0 !important;
+}
+
+.r-0 {
+  right: 0 !important;
+}
+
+.l-0 {
+  left: 0 !important;
+}
+
+.x-0 {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.y-0 {
+  top: 0 !important;
+  bottom: 0 !important;
+}
+
+.di-bg-primary {
+  background-color: #012348 !important;
+  border-color: #012348 !important;
+}
+
+.di-tx-primary {
+  color: #064886 !important;
+  border-color: #064886 !important;
+}
+
+/* Overrided Properties */
+.nav-tabs .nav-item .nav-link, .nav-tabs .nav-link {
+  color: #6c757d;
+  font-weight: 700!important;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: #064886 !important;
+  font-weight: 700!important;
+}
