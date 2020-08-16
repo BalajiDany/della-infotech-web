@@ -1,12 +1,13 @@
 import React from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap';
-import { Stylings } from '../../../utils/Types';
+
 import AwsLogo  from '../../../assets/aws.svg';
+import AwsS3  from '../../../assets/aws-s3.svg';
+import { Stylings } from '../../../utils/Types';
+import AwsEc2  from '../../../assets/aws-ec2.svg';
+import AwsRds  from '../../../assets/aws-rds.svg';
 import AzureLogo  from '../../../assets/azure.svg';
 import GoogleLogo  from '../../../assets/google.svg';
-import AwsEc2  from '../../../assets/aws-ec2.svg';
-import AwsS3  from '../../../assets/aws-s3.svg';
-import AwsRds  from '../../../assets/aws-rds.svg';
 
 export interface ServiceDetailCardProps {
 

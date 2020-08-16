@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import ServiceDetailCard from '../components/ServiceDetailCard';
+import { RiDragDropLine } from "react-icons/ri";
 import { Container, Col, Row, Card } from 'react-bootstrap';
-import { Stylings } from '../../../utils/Types';
-import AmazonWebService from './modal/AmazonWebService';
+
 import Azure from './modal/Azure';
 import GoogleCloud from './modal/GoogleCloud';
-import { RiDragDropLine } from "react-icons/ri";
+import { Stylings } from '../../../utils/Types';
+import AmazonWebService from './modal/AmazonWebService';
+import ServiceDetailCard from '../components/ServiceDetailCard';
 
 const cloudLoginDetailData = [
     {

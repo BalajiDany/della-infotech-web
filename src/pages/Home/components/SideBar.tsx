@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Stylings } from '../../../utils/Types';
-import { GiHamburgerMenu } from 'react-icons/gi';
 import Radium from 'radium';
-import AwsLogo  from '../../../assets/aws-sidemenu.svg';
+import React, { useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+
+import { Stylings } from '../../../utils/Types';
 import AzureLogo  from '../../../assets/azure.svg';
 import GoogleLogo  from '../../../assets/google.svg';
+import AwsLogo  from '../../../assets/aws-sidemenu.svg';
 
 const sideBarData = [
     {

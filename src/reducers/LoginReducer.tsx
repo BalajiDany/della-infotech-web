@@ -1,5 +1,5 @@
 import { Action } from '../utils/Types';
-import { ACTION_TYPE } from '../actions/Login';
+import { ACTION_TYPE } from '../actions/LoginActions';
 
 export interface Modal {
     email: string,

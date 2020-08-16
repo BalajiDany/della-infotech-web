@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import LoadingScreen from '../component/LoadingScreen';
@@ -9,25 +9,53 @@ const LoginPage = React.lazy(() => import('./Login/Login'));
 
 const MainRouter = () => {
 
-    // ReactRouter
-    // Ref: https://reactrouter.com/web/api
+    // Check for auth
+    const [authendicated, setAuthendicated] = useState(false);
+    const [enableRouting, setEnableRouting] = useState(false);
+
+    useEffect(() => {
+        // Check for auth and setAuthendicated.
+        setTimeout(() => {
+            setAuthendicated(false);
+            setEnableRouting(true);
+        }, 1000)
+    }, []);
+    console.log(authendicated, 'authendication');
+
+    // Only After Authendication these routers are performed
+    const authndicatedRouter = [
+        // All Authendicated Routes
+
+        <Route path='/home' component={HomePage} />,
+        <Route path='/' exact render={() => (<Redirect to='/home' />)} />,
+        <Route path='/login' exact render={() => (<Redirect to='/home' />)} />,
+    ];
+
+    const erroHandlingRouter = [
+        <Route render={() => (<h5>Could not find the resource</h5>)} />
+    ]
+
     const router = (
         <Switch>
-            {
-                // Exact is not mentioned to hook nested Routing
-                // path can also accept list of string path={['/', '/home']}
-            }
+            {authendicated ? authndicatedRouter : null}
+
+            {/* pages That dont need for authendication */}
             <Route path={['/about', '/about/:name']} component={AboutPage} />
-            <Route path='/logout' exact render={ () => (<Redirect to='/login' />)} />
-            <Route path='/login' component={ LoginPage } />
-            <Route path='/' component={ HomePage } />
+            <Route path='/passwordReset' exact render={() => <h1>Password Reset Page</h1>} />
+
+
+            <Route path={['/', '/logout']} exact render={() => (<Redirect to='/login' />)} />
+            <Route path='/login' component={LoginPage} />
+            {!authendicated ? <Route render={() => (<Redirect to='/login' />)} /> : erroHandlingRouter}
         </Switch>
     );
 
+    const loadingScreen = <LoadingScreen />;
+
     return (
         <BrowserRouter>
-            <Suspense fallback={ <LoadingScreen /> }>
-                { router }
+            <Suspense fallback={loadingScreen}>
+                {enableRouting ? router : loadingScreen}
             </Suspense>
         </BrowserRouter>
     );

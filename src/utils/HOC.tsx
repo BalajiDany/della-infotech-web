@@ -1,6 +1,6 @@
-import React, { ComponentType } from 'react'
-import { Provider } from 'react-redux'
-import { Store } from 'redux'
+import { Store } from 'redux';
+import { Provider } from 'react-redux';
+import React, { ComponentType } from 'react';
 
 export const connectWithStore = (store: Store, ChildComponent: ComponentType) => {
     return (props: {}) => (

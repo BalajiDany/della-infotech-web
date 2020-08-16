@@ -1,20 +1,21 @@
+import { connect } from 'react-redux';
 import React, { useState } from 'react';
 import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
-import { connectWithStore } from '../../utils/HOC';
-import { createStoreWithDep } from '../../utils/Store';
+
+import reducer from './Reducer';
 import NavBar from '../../component/NavBar';
-import { Stylings } from '../../utils/Types';
 import SideBar from './components/SideBar';
-import CloudLogin from './components/CloudLogin';
 import Details from './components/Details';
 import Billing from './components/Billing';
 import Monitor from './components/Monitor';
-import AmazonWebService from './components/modal/AmazonWebService';
 import Azure from './components/modal/Azure';
+import { Stylings } from '../../utils/Types';
+import { syncPosts } from '../../actions/Posts';
+import CloudLogin from './components/CloudLogin';
+import { connectWithStore } from '../../utils/HOC';
+import { createStoreWithDep } from '../../utils/Store';
 import GoogleCloud from './components/modal/GoogleCloud';
-import reducer from './Reducer';
-import { syncPosts } from '../../actions/Posts'
-import { connect } from 'react-redux';
+import AmazonWebService from './components/modal/AmazonWebService';
 
 const Home = () => {
 

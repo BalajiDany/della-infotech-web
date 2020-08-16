@@ -1,7 +1,8 @@
 import React from 'react';
-import Table from 'react-bootstrap/Table'
-import { Stylings } from '../../../utils/Types';
+import Table from 'react-bootstrap/Table';
 import { Accordion, Card, Button } from 'react-bootstrap';
+
+import { Stylings } from '../../../utils/Types';
 
 // TODO Table need to be rendered.
 const Details = () => {

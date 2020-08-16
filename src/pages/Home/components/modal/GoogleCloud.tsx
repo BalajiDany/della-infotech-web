@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Button, Form, Col, Row } from 'react-bootstrap';
+
 import { Stylings } from '../../../../utils/Types';
 
 export interface GoogleCloudProps {

@@ -46,3 +46,13 @@
   color: #064886 !important;
   font-weight: 700!important;
 }
+
+
+/* Defaults */
+html, body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
