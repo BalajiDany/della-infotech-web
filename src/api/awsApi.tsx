@@ -8,8 +8,11 @@ export const awsApi = axios.create({
 
 // Post Request
 export const performLogin = (mailId: string, password: string) => {
+    return awsApi.post('/user/login', { mailId, password });
+};
 
-    return awsApi.post('/user/login', { mailId, password })
+export const isAuthendicated = () => {
+    return awsApi.get('/user/auth');
 };
 
 // Get Request

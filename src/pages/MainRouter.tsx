@@ -1,6 +1,7 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
+import { isAuthendicated } from '../api/awsApi';
 import LoadingScreen from '../component/LoadingScreen';
 
 const HomePage = React.lazy(() => import('./Home/Home'));
@@ -15,10 +16,10 @@ const MainRouter = () => {
 
     useEffect(() => {
         // Check for auth and setAuthendicated.
-        setTimeout(() => {
-            setAuthendicated(false);
-            setEnableRouting(true);
-        }, 1000)
+        isAuthendicated()
+            .then(() => setAuthendicated(false)) // Set it based on the result
+            .catch(() => setAuthendicated(false))
+            .finally(() => setEnableRouting(true));
     }, []);
     console.log(authendicated, 'authendication');
 
